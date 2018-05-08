@@ -10,12 +10,25 @@
 
 ## Introduction
 
+<h3> The Current Structure of the Project </h3>
 <p align="center">
-  <h3> The Current Structure of the Project </h3>
-  <strong>Image of the component structure of Val Slab Shop React Version </strong>
+  <strong>Component structure of ReactCalculator </strong>
   <img src = https://github.com/neumanna94/ValSlabShop-React/blob/master/Images/ValSlabShop%20Component%20Map.jpg?raw=true" width=700>
   <br>
 </p>
+
+<p align="center">
+  <strong> Routing/Component Structure </strong>
+  <img src = https://github.com/neumanna94/ReactCalculator/blob/master/imgs/Calc_webpagelayout.jpg" width=700>
+  <br>
+</p>
+
+<p align="center">
+  <strong> UI Display Example </strong>
+  <img src = https://github.com/neumanna94/ReactCalculator/blob/master/imgs/calc.jpg" width=700>
+  <br>
+</p>
+
 
 
 ## Setup/Installation
