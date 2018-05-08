@@ -19,13 +19,13 @@
 
 <p align="center">
   <strong> Routing/Component Structure </strong>
-  <img src = https://github.com/neumanna94/ReactCalculator/blob/master/imgs/Calc_webpagelayout.jpg" width=700>
+  <img src = https://github.com/neumanna94/ReactCalculator/blob/master/imgs/Calc_webpagelayout.jpg?raw=true" width=700>
   <br>
 </p>
 
 <p align="center">
   <strong> UI Display Example </strong>
-  <img src = https://github.com/neumanna94/ReactCalculator/blob/master/imgs/calc.jpg" width=700>
+  <img src = https://github.com/neumanna94/ReactCalculator/blob/master/imgs/calc.jpg?raw=true" width=700>
   <br>
 </p>
 
