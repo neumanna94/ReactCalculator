@@ -4,15 +4,33 @@ class Calculator extends React.Component {
   constructor(){
     super()
     this.state = {
-      inputField: ''
+      inputField: '',
     }
   }
 
-  handleClick(e){
-    let newInputField = this.state.inputField + e;
-    this.setState(newInputField)
-  }
+  handleClick(input){
+    //Handling for whether my next input should have a ()
+    if(input == 'cos' || input == 'sin' || input == 'tan' || input == 'ln'){
+      this.setState({wasParanFunction: true});
+    }
 
+    var newInputField = this.state.inputField;
+    if(input === 'AC'){
+      newInputField = '';
+    } else {
+      newInputField = newInputField + input;
+    }
+
+    this.setState({inputField: newInputField});
+  }
+  handleChange(input){
+    let newInputField = "";
+    newInputField = input.target.value;
+    this.setState({inputField: newInputField});
+  }
+  handleCalculationSubmission(){
+    
+  }
   render(){
     return (
       <calculator>
@@ -53,43 +71,46 @@ class Calculator extends React.Component {
             box-shadow: 0 0 10px black;
             cursor: pointer;
           }
+          input {
+            width: 100%;
+          }
         `}</style>
-        <div className="inputField">inputField</div>
-        <div className="box">Rad</div>
+        <div className="inputField"><input type='text' value={this.state.inputField} onChange={this.handleChange.bind(this)} /></div>
         <div className="box"></div>
-        <div className="box">x!</div>
-        <div className="box">(</div>
-        <div className="box">)</div>
-        <div className="box">%</div>
-        <div className="box">AC</div>
-        <div className="box">Inv</div>
-        <div className="box">sin</div>
-        <div className="box">ln</div>
-        <div className="box number">7</div>
-        <div className="box number">8</div>
-        <div className="box number">9</div>
-        <div className="box">/</div>
-        <div className="box">pi</div>
-        <div className="box">cos</div>
-        <div className="box">log</div>
-        <div className="box number">4</div>
-        <div className="box number">5</div>
-        <div className="box number">6</div>
-        <div className="box">x</div>
-        <div className="box">e</div>
-        <div className="box">tan</div>
-        <div className="box">sqrt</div>
-        <div className="box number">1</div>
-        <div className="box number">2</div>
-        <div className="box number">3</div>
-        <div className="box">-</div>
         <div className="box"></div>
-        <div className="box">EXP</div>
-        <div className="box">x^y</div>
-        <div className="box number">0</div>
-        <div className="box number">.</div>
-        <div className="box equal">=</div>
-        <div className="box">+</div>
+        <div className="box" onClick={()=>this.handleClick('!')}>x!</div>
+        <div className="box" onClick={()=>this.handleClick('(')}>(</div>
+        <div className="box" onClick={()=>this.handleClick(')')}>)</div>
+        <div className="box" onClick={()=>this.handleClick('%')}>%</div>
+        <div className="box" onClick={()=>this.handleClick('AC')}>AC</div>
+        <div className="box"></div>
+        <div className="box" onClick={()=>this.handleClick('sin')}>sin</div>
+        <div className="box" onClick={()=>this.handleClick('ln')}>ln</div>
+        <div className="box number" onClick={()=>this.handleClick(7)}>7</div>
+        <div className="box number" onClick={()=>this.handleClick(8)}>8</div>
+        <div className="box number" onClick={()=>this.handleClick(9)}>9</div>
+        <div className="box" onClick={()=>this.handleClick('/')}>/</div>
+        <div className="box" onClick={()=>this.handleClick('pi')}>pi</div>
+        <div className="box" onClick={()=>this.handleClick('cos')}>cos</div>
+        <div className="box" onClick={()=>this.handleClick('log')}>log</div>
+        <div className="box number" onClick={()=>this.handleClick(4)}>4</div>
+        <div className="box number" onClick={()=>this.handleClick(5)}>5</div>
+        <div className="box number" onClick={()=>this.handleClick(6)}>6</div>
+        <div className="box" onClick={()=>this.handleClick('*')}>x</div>
+        <div className="box" onClick={()=>this.handleClick('^')}>^</div>
+        <div className="box" onClick={()=>this.handleClick('tan')}>tan</div>
+        <div className="box" onClick={()=>this.handleClick('sqrt')}>sqrt</div>
+        <div className="box number" onClick={()=>this.handleClick(1)}>1</div>
+        <div className="box number" onClick={()=>this.handleClick(2)}>2</div>
+        <div className="box number" onClick={()=>this.handleClick(3)}>3</div>
+        <div className="box" onClick={()=>this.handleClick('-')}>-</div>
+        <div className="box" onClick={()=>this.handleClick('')}></div>
+        <div className="box"></div>
+        <div className="box" onClick={()=>this.handleClick('')}></div>
+        <div className="box number" onClick={()=>this.handleClick(0)}>0</div>
+        <div className="box number" onClick={()=>this.handleClick('.')}>.</div>
+        <div className="box equal" onClick={()=>this.handleCalculationSubmission()}>=</div>
+        <div className="box" onClick={()=>this.handleClick('+')}>+</div>
       </calculator>
     )
   }
