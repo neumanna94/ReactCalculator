@@ -1,19 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Calculator extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       inputField: '',
     }
   }
 
   handleClick(input){
-    //Handling for whether my next input should have a ()
-    if(input == 'cos' || input == 'sin' || input == 'tan' || input == 'ln'){
-      this.setState({wasParanFunction: true});
-    }
-
     var newInputField = this.state.inputField;
     if(input === 'AC'){
       newInputField = '';
@@ -29,7 +25,7 @@ class Calculator extends React.Component {
     this.setState({inputField: newInputField});
   }
   handleCalculationSubmission(){
-    
+    props.inputFieldToCalculate({inputFieldToCalculate: this.state.inputField});
   }
   render(){
     return (
@@ -116,5 +112,8 @@ class Calculator extends React.Component {
   }
 }
 
+Calculator.propTypes = {
+  inputFieldToCalculate: PropTypes.string
+}
 
 export default Calculator;
