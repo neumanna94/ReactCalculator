@@ -3,7 +3,7 @@ import React from 'react';
 function Footer(){
   return (
     <footer>
-      <style jsx>{`
+      <style>{`
         footer {
           position: fixed;
           bottom: 0;

@@ -12,13 +12,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+
     };
   }
 
   render(){
     return (
       <div>
-        <style jsx global>{`
+        <style>{`
           body {
             font-family: Helvetica;
             color: black;
